@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
             --emerald-600: #059669;
             --amber-600: #d97706;
         }
-
+ 
         /* Use system fonts so no internet is needed to download fonts */
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -31,14 +31,14 @@
             padding-top: 180px; /* Space for fixed header */
             padding-bottom: 120px;
         }
-
+ 
         *, *::before, *::after { box-sizing: border-box; }
-
+ 
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--slate-900); }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
-
+ 
         /* --- Header & Timer UI --- */
         header {
             position: fixed;
@@ -54,7 +54,7 @@
             justify-content: space-between;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
         }
-
+ 
         .header-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -63,7 +63,7 @@
             align-items: center;
             justify-content: space-between;
         }
-
+ 
         .controls { display: flex; gap: 0.5rem; }
         
         button {
@@ -73,11 +73,11 @@
             transition: all 0.2s;
             display: flex; align-items: center; justify-content: center;
         }
-
+ 
         .btn-play { background-color: var(--emerald-600); color: white; padding: 1rem 1.5rem; font-size: 1rem; }
         .btn-pause { background-color: var(--amber-600); color: white; padding: 1rem 1.5rem; font-size: 1rem; }
         .btn-reset { background-color: var(--slate-800); color: #cbd5e1; padding: 1rem; border: 1px solid #334155; }
-
+ 
         .timer-display {
             font-family: monospace;
             font-size: 4.5rem;
@@ -87,7 +87,7 @@
         }
         .timer-red { color: var(--red-500); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
-
+ 
         .tab-switcher {
             display: flex;
             background-color: #020617;
@@ -105,18 +105,18 @@
             background-color: var(--indigo-600);
             color: white;
         }
-
+ 
         /* --- Main Content --- */
         main {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
+ 
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
+ 
         /* --- Script Formatting --- */
         .script-text p {
             font-size: 1.75rem;
@@ -124,7 +124,7 @@
             margin-bottom: 2rem;
         }
         @media (max-width: 768px) { .script-text p { font-size: 1.5rem; } }
-
+ 
         .pause-dot {
             color: var(--red-500);
             font-size: 1.4em;
@@ -133,7 +133,7 @@
             display: inline-block;
             line-height: 0;
         }
-
+ 
         .time-marker {
             color: var(--indigo-400);
             font-family: monospace;
@@ -147,7 +147,7 @@
             margin-bottom: 0.5rem;
             letter-spacing: 0.1em;
         }
-
+ 
         .section-header {
             color: white;
             font-weight: 900;
@@ -158,7 +158,7 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--slate-800);
         }
-
+ 
         .scripture-box {
             background-color: var(--slate-900);
             border-left: 6px solid var(--indigo-600);
@@ -182,7 +182,29 @@
             margin-bottom: 0.5rem;
             font-style: normal;
         }
-
+ 
+        .cut-candidate {
+            border: 2px dashed var(--red-500);
+            border-radius: 1rem;
+            padding: 1.5rem 2rem 0.5rem 2rem;
+            margin: 2.5rem 0;
+            background-color: rgba(239, 68, 68, 0.05);
+        }
+ 
+        .cut-label {
+            display: inline-block;
+            color: var(--red-400);
+            font-weight: 900;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background-color: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+        }
+ 
         .next-image-badge {
             display: inline-block;
             background-color: rgba(217, 119, 6, 0.2);
@@ -196,7 +218,7 @@
             font-size: 0.875rem;
             margin: 1.5rem 0;
         }
-
+ 
         /* --- Outline Formatting --- */
         .outline-block {
             border-left: 8px solid var(--indigo-600);
@@ -221,7 +243,116 @@
             padding-left: 1.5rem;
         }
         .outline-list li { margin-bottom: 1rem; }
-
+ 
+        /* --- Mind Map Outline UI --- */
+        :root {
+            --rose-600: #e11d48;
+            --rose-400: #fb7185;
+            --amber-400: #fbbf24;
+            --emerald-400: #34d399;
+        }
+ 
+        .mindmap-hint {
+            text-align: center;
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        .mindmap-hint strong { color: #94a3b8; }
+ 
+        .mindmap-section { margin-bottom: 3.5rem; }
+ 
+        .mindmap-badge-wrap { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+        .mindmap-badge {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            border-radius: 999px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 1.1rem;
+            color: white;
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.6);
+        }
+        .mindmap-badge.intro { background: linear-gradient(135deg, var(--amber-600), #92400e); }
+        .mindmap-badge.hw { background: linear-gradient(135deg, var(--rose-600), #881337); }
+        .mindmap-badge.pc { background: linear-gradient(135deg, var(--emerald-600), #065f46); }
+        .mindmap-badge.concl { background: linear-gradient(135deg, var(--indigo-600), #312e81); }
+ 
+        .bubble-list { display: flex; flex-direction: column; align-items: center; gap: 0.85rem; }
+ 
+        .bubble-item { width: 100%; max-width: 640px; }
+ 
+        .bubble-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            border-radius: 999px;
+            background: var(--slate-900);
+            border: 2px solid var(--slate-800);
+            font-weight: 700;
+            font-size: 1.1rem;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: transform 0.15s ease, opacity 0.15s ease, border-radius 0.15s ease;
+        }
+        .bubble-item.expanded .bubble-header { border-radius: 1rem 1rem 0 0; }
+        .bubble-header.pressing { transform: scale(0.96); opacity: 0.8; }
+ 
+        .bubble-item.intro .bubble-header { color: var(--amber-400); border-color: rgba(217,119,6,0.5); }
+        .bubble-item.hw .bubble-header { color: var(--rose-400); border-color: rgba(225,29,72,0.5); }
+        .bubble-item.pc .bubble-header { color: var(--emerald-400); border-color: rgba(5,150,105,0.5); }
+        .bubble-item.concl .bubble-header { color: var(--indigo-400); border-color: rgba(79,70,229,0.5); }
+ 
+        .bubble-dot { width: 10px; height: 10px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+ 
+        .bubble-details {
+            display: none;
+            background: var(--slate-900);
+            border: 2px solid var(--slate-800);
+            border-top: none;
+            border-radius: 0 0 1rem 1rem;
+            padding: 1.25rem 1.75rem 1.5rem 1.75rem;
+        }
+        .bubble-item.expanded .bubble-details { display: block; }
+        .bubble-item.intro .bubble-details { border-color: rgba(217,119,6,0.5); }
+        .bubble-item.hw .bubble-details { border-color: rgba(225,29,72,0.5); }
+        .bubble-item.pc .bubble-details { border-color: rgba(5,150,105,0.5); }
+        .bubble-item.concl .bubble-details { border-color: rgba(79,70,229,0.5); }
+ 
+        .bubble-details ul { margin: 0; padding-left: 1.25rem; color: #cbd5e1; font-size: 1.05rem; line-height: 1.7; }
+        .bubble-details li { margin-bottom: 0.6rem; }
+ 
+        .bubble-hint {
+            margin-top: 1rem;
+            padding-top: 0.85rem;
+            border-top: 1px solid var(--slate-800);
+            font-size: 0.8rem;
+            color: #64748b;
+            text-align: center;
+        }
+ 
+        .anchor-flash { background-color: rgba(129, 140, 248, 0.18); border-radius: 0.5rem; transition: background-color 1.3s ease; }
+ 
+        .decision-marker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--amber-400);
+            font-family: monospace;
+            font-weight: 900;
+            font-size: 0.9rem;
+            background: rgba(217, 119, 6, 0.12);
+            border: 1px solid rgba(217, 119, 6, 0.5);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            letter-spacing: 0.05em;
+            margin-top: 2rem;
+        }
+ 
         /* --- Flash Overlay --- */
         #flash-overlay {
             position: fixed;
@@ -233,7 +364,7 @@
             transition: opacity 0.05s ease-out;
         }
         .is-flashing { opacity: 1 !important; }
-
+ 
         /* --- Auto-Scroll HUD --- */
         #scroll-hud {
             position: fixed;
@@ -263,7 +394,7 @@
             background-color: var(--indigo-600);
             color: white;
         }
-
+ 
         /* Utility classes */
         .text-center { text-align: center; }
         .font-bold { font-weight: bold; }
@@ -274,10 +405,10 @@
     </style>
 </head>
 <body>
-
+ 
     <div id="flash-overlay"></div>
     <div id="scroll-hud">Speed: 1.0x</div>
-
+ 
     <header>
         <div class="header-container">
             <div class="controls">
@@ -295,10 +426,10 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
                 </button>
             </div>
-
+ 
             <!-- Note: The initial display value here will be overwritten by JS on load -->
             <div id="timerDisplay" class="timer-display">30:00</div>
-
+ 
             <div class="tab-switcher">
                 <button id="btnTabScript" class="tab-btn active" onclick="switchTab('script')">
                     <svg style="vertical-align:middle; margin-right:4px; display:inline;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
@@ -311,295 +442,326 @@
             </div>
         </div>
     </header>
-
+ 
     <main>
         <!-- SCRIPT TAB -->
         <div id="tab-script" class="tab-content active script-text">
             
             <h1 class="text-center font-black" style="font-size:2.5rem; margin-bottom:0.5rem; color:white;">No. 30 How to Improve Family Communication</h1>
             <p class="text-center font-bold" style="color:#64748b; margin-bottom:3rem; font-size:1.25rem;">30 Minute Public Discourse</p>
-
+ 
             <div class="time-marker">30:00 LEFT</div>
             <div class="section-header">INTRODUCTION (5 min)</div>
-
-            <p class="text-indigo font-bold"><em>(Walk to the podium looking at your phone. Type a quick message. Pause for 2 beats. Put the phone in your pocket and look up.)</em></p>
-
+ 
+            <p id="anchor-i1" class="text-indigo font-bold"><em>(Walk to the podium looking at your phone. Type a quick message. Pause for 2 beats. Put the phone in your pocket and look up.)</em></p>
+ 
             <p>I apologize for that. I was just sending a quick message. (pause 1 beat) But let me ask you... how did that make you feel?</p>
-
+ 
             <p>It certainly didn't make you feel connected to me, did it? You probably thought, "This brother has a real problem, and <em>he's</em> going to talk to us about communication?"</p>
-
+ 
             <p>It is incredible when you think about it. Never in human history have we had so many tools to stay connected. We can text, video chat, and instantly share photos with people on the other side of the planet. (pause 1 beat) And yet, despite all this amazing technology, there is still a massive problem with communication in the home.</p>
-
-            <p>If we have all the tools in the world, what is the fundamental issue being missed? We often miss the wisdom of the One who actually originated the family arrangement—Jehovah God.</p>
-
+ 
+            <p>If we have all the tools in the world, what's still missing? The wisdom of the One who actually originated the family arrangement—Jehovah God.</p>
+ 
             <p>We all yearn to be close to our family members, but communication in today's world is difficult. And a lack of meaningful communication can lead to deep misunderstandings and regrets.</p>
-
-            <p>Notice what Proverbs 15:22 says:</p>
-
+ 
+            <p id="anchor-i2">Notice what Proverbs 15:22 says:</p>
+ 
             <div class="scripture-box">
                 <div class="scripture-title">Proverbs 15:22</div>
                 "Plans fail when there is no consultation, But there is accomplishment through many advisers."
             </div>
-
+ 
             <p>This is a scripture that clearly shows cause and effect. "Consultation" is simply another word for communication. So, according to this verse, what happens if there is no communication? (pause 1 beat) <span class="text-red font-bold">Failure!</span></p>
-
+ 
             <p>But if all in the family are working towards communication, what is the result? (pause 1 beat) <span class="text-indigo font-bold">Accomplishment!</span> Open, respectful, and loving communication is essential for family happiness.</p>
-
-            <div class="text-center">
+ 
+            <div id="anchor-i3" class="text-center">
                 <span class="next-image-badge">(SHOW ARTWORK: Family not communicating well)</span>
             </div>
-
+ 
             <p>Let’s take a look at this picture. The dad is troubled, and the mom is thinking, “These kids and their devices!! Ugh!!” and the kids are in their own little world. They don't even know their parents are upset.</p>
-
+ 
             <p>What advice would you give this family? (pause 1 beat)</p>
-
+ 
             <p>Have you ever watched a movie where the protagonist is always getting himself into trouble because he either didn't communicate something simple to someone, or there was a miscommunication that produced a chain of unstoppable events? It can be so frustrating to watch! You want to reach into the screen and shake some sense into them!</p>
-
+ 
             <p>Often, the resolution of such stories is clear and open communication. Don’t you want to reach into the screen and shake some sense into this family?</p>
-
+ 
             <p>How about your life? Do you feel like your family life sometimes feels like one of those tragic comedies?</p>
-
+ 
             <div class="text-center">
                 <span class="next-image-badge">(HIDE ARTWORK)</span>
             </div>
-
-            <p>We all live busy lives. We have these devices that can be very distracting. And of course, none of us are perfect. Each of us has idiosyncrasies that can make it difficult to communicate with us.</p>
-
+ 
+            <p>We all live busy lives, our devices are distracting, and none of us are perfect. Each of us has our own quirks that can make communication difficult.</p>
+ 
             <p>So, how can we improve our communications within the family? Proverbs 24:3 says “by wisdom a house is built up.” Today we are going to see how applying Bible principles—the wisdom from above—will help us improve our communication within the family.</p>
             
-            <p class="text-indigo font-bold">Pay attention to these three key points:</p>
+            <p id="anchor-i4" class="text-indigo font-bold">Pay attention to these three key points:</p>
             <ol style="font-size: 1.5rem; line-height: 1.6; margin-bottom: 2rem; color: var(--indigo-400); font-weight: bold;">
                 <li>How husbands and wives must work hard to communicate with one another.</li>
                 <li>How children and parents need to keep the lines of communication open.</li>
                 <li>And how worshipping Jehovah promotes good family communication.</li>
             </ol>
-
-
+ 
+ 
             <div class="time-marker">25:00 LEFT</div>
             <div class="section-header">HUSBANDS AND WIVES (10 min)</div>
-
-            <p>So first, let's talk about communication between husbands and wives.</p>
-
+ 
+            <p id="anchor-hw1">So first, let's talk about communication between husbands and wives.</p>
+ 
             <p>First, it's appropriate to acknowledge that men and women are different. Not just in our physical traits but also in our mental and emotional traits. It’s important to recognize these differences and appreciate them. It is the way Jehovah made us.</p>
-
+ 
             <div class="scripture-box">
                 <div class="scripture-title">Genesis 2:18</div>
                 "Then Jehovah God said: 'It is not good for the man to continue to be alone. I am going to make a helper for him, as a complement of him.'"
             </div>
-
+ 
             <p>God created the man and woman to <span class="text-indigo font-bold">complement each other, not to copy each other.</span> This puts our differences into a beautiful Scriptural context.</p>
            
             <p>That being said, we shouldn’t be surprised that men and women communicate differently than one another. Generally, women prefer to talk out a problem before hearing a solution; in fact, sometimes talking <em>is</em> the solution. And men tend to think in terms of solutions.</p>
-
-            <p>Remember that marriage is the uniting of two minds, two personalities, two backgrounds, sets of spiritual values, and two tongues. This presents quite a challenge! Yet, understanding this is essential to a happy marriage.</p>
-
-            <p>So what can husbands do? One Bible principle that can help us can be found at 1 Peter 3:7:</p>
-
+ 
+            <p>Marriage unites two minds, two personalities, two backgrounds—even two tongues. That's quite a challenge! But understanding this is essential to a happy marriage.</p>
+ 
+            <p id="anchor-hw2">So what can husbands do? One Bible principle that can help us can be found at 1 Peter 3:7:</p>
+ 
             <div class="scripture-box">
                 <div class="scripture-title">1 Peter 3:7</div>
                 "You husbands, in the same way, continue dwelling with them according to knowledge. Assign them honor as to a weaker vessel, the feminine one, since they are also heirs with you of the undeserved favor of life, in order for your prayers not to be hindered."
             </div>
-
+ 
             <p class="text-indigo font-bold">"Dwell with them according to knowledge."</p>
-
-            <p>The footnote in our study Bible mentions “showing them consideration; understanding them.” For a Christian husband to dwell with his wife “according to knowledge” means that he really has to understand her needs. These are not just her physical needs but, more importantly, her emotional, psychological, and spiritual needs. If he ‘dwells with her according to knowledge,’ he will understand his God-assigned role. It will also mean that he respects her feminine dignity.</p>
-
+ 
+            <p>The footnote in our study Bible says this means “showing them consideration; understanding them.” In simple terms—a husband needs to understand his wife's needs, not just physical, but emotional, psychological, and spiritual. That's what it means to respect her feminine dignity.</p>
+ 
             <p>The beautiful thing about how Jehovah created us is that we are all different. Husbands, do you really understand your wife? Do you know what makes her unique? (pause 2 beats)</p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~23:52 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 5 (~0.7 min)</span>
             <p>To illustrate this, we almost all have these amazing devices in our pockets: The smart phone. With a basic understanding of the device you can make a phone call, send a text, take a picture. But if you took the time to study your smart phone you would realize you can do so much more! Some people have recorded and edited entire movies just with a smart phone. The possibilities seem endless.</p>
-
-            <p>Likewise husbands, if you take the time and pay attention to your wife and really learn about her, you will unlock the full potential that Jehovah had purposed for husbands and wives found at Ecclesiastes 4:9, 10: "Two are better than one because they have a good reward for their hard work. For if one of them falls, the other can help his partner up."</p>
-
+            </div>
+ 
+            <p>Husbands, if you take the time to really learn your wife, you'll unlock what Jehovah purposed for husbands and wives. Ecclesiastes 4:9, 10 puts it simply: "Two are better than one... for if one of them falls, the other can help his partner up."</p>
+ 
             <p>This understanding will go a long way to you fulfilling the next portion of 1 Peter 3:7: <span class="text-indigo font-bold">“Assign them honor as to a weaker vessel.”</span></p>
-
+ 
             <p>When husbands recognize the amazing and unique role women fulfill in Jehovah’s purpose, they both honor Jehovah and their marriage. Husbands will then treat her as a precious vessel.</p>
-
-            <p>Think about this: have you ever known someone that bought a $1000 phone? What is the first thing they do to that phone? They put a protective case on it and they care for it as if it were a baby! But, little by little they forget about that initial investment until one day they accidently drop it and the screen shatters.</p>
-
-            <p>If husbands are to continually show their wives honor as a weaker vessel as the scripture says, they need to constantly remember the value of their wife. This takes time and attention. This will not come automatically. So, the two parts of the scripture go hand in hand. Knowledge and understanding leads to honoring and cherishing your wife.</p>
-
+ 
+            <p id="anchor-hw3">Think about this: have you ever known someone that bought a $1000 phone? What is the first thing they do to that phone? They put a protective case on it and they care for it as if it were a baby! But, little by little they forget about that initial investment until one day they accidently drop it and the screen shatters.</p>
+ 
+            <p>Honoring your wife as scripture says takes time and attention—it won't come automatically. The two halves of that verse go hand in hand: knowledge leads to honor.</p>
+ 
             <div class="text-center">
                 <span class="next-image-badge">(SHOW ARTWORK: Husband paying attention to his wife)</span>
             </div>
-
-            <p>Look at how this husband is paying attention to his wife. He is focused, he is concerned, he is showing loving kindness, he is listening to her heartfelt concerns. He values her opinions, realizing that some are different from his own but nonetheless values her very much!</p>
-
+ 
+            <p>Look at how this husband is paying attention to his wife. He's focused. He's listening to her heartfelt concerns. Her opinions may differ from his own—but he values them deeply.</p>
+ 
             <p>If a husband was to neglect his role in this manner, the last part of the verse shows that even his prayers to God could be hindered. A $1000 smartphone with a broken screen cannot even make a phone call. (pause 2 beats)</p>
-
+ 
             <p class="text-red font-bold">So here is the point: If a husband does not follow this counsel, Jehovah will not listen to his prayers.</p>
-
-            <p>Yes, it matters to Jehovah how a husband treats his wife. He needs to take the time, really understand his wife, dwell with her according to knowledge and assign her honor.</p>
-
-            <p>So what can wives do to contribute to good communication with their husbands?</p>
-
+ 
+            <p>Yes, it matters to Jehovah how a husband treats his wife. Take the time. Really understand her. Honor her.</p>
+ 
+            <p id="anchor-hw4">So what can wives do to contribute to good communication with their husbands?</p>
+ 
             <p>Likewise, she too can apply these same points and take the time to better understand her husband. Note what the scriptures say at Proverbs 31:26:</p>
-
+ 
             <div class="scripture-box">
                 <div class="scripture-title">Proverbs 31:26</div>
                 "She opens her mouth in wisdom; The law of kindness is on her tongue."
             </div>
-
+ 
             <p>This scripture is grouped with a number of other scriptures describing a capable wife. Certainly, all you wives would like to be described by your husbands as being capable! And this scripture shows one of the keys to become such a capable wife.</p>
-
-            <p>She opens her mouth in wisdom. Above all, the capable wife is a spiritual person. She fears God and worships him with deep respect and reverential awe. Yes, she recognizes that true wisdom comes from above. Yes, when a Christian wife is obliged to speak her mind, it will be respectful and kind.</p>
-
+ 
+            <div class="time-marker">20:00 LEFT</div>
+ 
+            <p>She opens her mouth in wisdom. Above all, the capable wife is a spiritual person—she fears God and worships him with deep respect. She recognizes that true wisdom comes from above. So when she speaks her mind, it comes out respectful and kind.</p>
+ 
             <p>Remember the scripture at Proverbs 14:1: "The truly wise woman builds up her house, But the foolish one tears it down with her own hands."</p>
-
-            <p>Consider a situation that arose in the life of Isaac and his wife, Rebekah, as recorded at Genesis 27:46–28:4. Let’s read a portion of that.</p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~19:30 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 1 (~2.7 min)</span>
+ 
+            <p id="anchor-hw5">Consider a situation that arose in the life of Isaac and his wife, Rebekah, as recorded at Genesis 27:46–28:4. Let’s read a portion of that.</p>
+ 
             <div class="scripture-box">
                 <div class="scripture-title">Genesis 27:46</div>
                 "After that Rebekah kept saying to Isaac: 'I am disgusted with my life because of the daughters of Heth. If Jacob ever takes a wife from the daughters of Heth, like these daughters of the land, what good is my life?'"
             </div>
-
+ 
             <p>This example shows that there is nothing wrong with a wife showing or displaying strong feelings on a matter. A wife builds up her house when she takes time to consider how she will express herself and do it with kindness.</p>
-
+ 
             <p>Notice how Isaac responds in the next verse: "So Isaac called Jacob and blessed him and commanded him, saying: 'You must not take a wife from the daughters of Canaan.'"</p>
-
+ 
             <p>There is no indication that Isaac responded harshly. Instead, what did he do? He sent their son Jacob away to find a God-fearing wife who was not likely to become a source of distress to Rebekah.</p>
-
+ 
             <p>Suppose that a disagreement arises between a husband and his wife. A subtle shift from “you” to “I” can prevent a minor disagreement from escalating into a heated argument. For example, instead of saying, “You never spend time with me!” why not say, “I wish we could spend more time together”?</p>
-
+ 
             <p>Imagine if Rebekah had said it this way: "You need to go and talk to your son and make sure he doesn’t marry one of those girls he’s been talking to!"</p>
-
+ 
             <p>No, she wisely, and thoughtfully explained the situation to Isaac and how it was affecting her. Focus on the problem, not just the person. Resist the tendency to analyze who is right and who is wrong as it says at Romans 14:19: “Pursue the things making for peace and the things that are upbuilding to one another.”</p>
-
-            <p>Yes, for both husbands and wives, meaningful heartfelt communication takes time and effort. A question for self-evaluation as a married couple: Do we regularly set aside time to talk together? Do we include Jehovah in on our discussions? Yes, when you are discussing a matter, do you take the time to include Jehovah in the conversation by praying together?</p>
-
-            <p>This is important to do on a regular basis “before” problems arise. If you are regularly communicating, you will more likely draw together when problems eventually arise.</p>
-
+            </div>
+ 
+            <p id="anchor-hw6">Yes, for both husbands and wives, meaningful heartfelt communication takes time and effort. A question for self-evaluation as a married couple: Do we regularly set aside time to talk together? Do we include Jehovah in our discussions—praying together before we decide?</p>
+ 
+            <p>Do this regularly—before problems ever come up. If you're already communicating well, you'll draw together naturally when trouble does come.</p>
+ 
             <p>But more importantly, when problems arise, what will help you communicate effectively as a couple? 1 Peter 3:8:</p>
-
+ 
             <div class="scripture-box">
                 <div class="scripture-title">1 Peter 3:8</div>
                 "Finally, all of you have unity of mind, fellow feeling, brotherly affection, tender compassion, and humility."
             </div>
-
+ 
             <p>All of these traits are important, but humility will stick out as being the most important. All these other things revolve around humility.</p>
-
+ 
             <p>Humility will allow you to view your mate as you should. As verse 7 brings out, you both “stand before Jehovah heirs of the undeserved favor of life”. If we are not humble, it will lead to pride and envy.</p>
-
+ 
             <p>Work on humility on yourself and realize that you both need to apologize and be forgiven. (pause 2 beats)</p>
-
-
+ 
+ 
             <div class="time-marker">15:00 LEFT</div>
             <div class="section-header">PARENTS AND CHILDREN (10 min)</div>
-
-            <p>And so, how about communication between parents and children? How can parents and children improve communication?</p>
-
+ 
+            <p id="anchor-pc1">And so, how about communication between parents and children? How can parents and children improve communication?</p>
+ 
             <p>Let’s talk with the parents first. It is your responsibility to keep the lines of communication open with your children. In order to do this parents need to be approachable and listen patiently to their children.</p>
-
+ 
             <p>How? Following this Bible principle can help. James 1:19:</p>
-
+ 
             <div class="scripture-box">
                 <div class="scripture-title">James 1:19</div>
                 "Know this, my beloved brothers: Everyone must be quick to listen, slow to speak, slow to anger."
             </div>
-
+ 
             <p>Every family member can benefit from following this Bible principle. And it is pretty self explanatory: Quick to listen, slow to speak. (pause 1 beat) Quick to listen, slow to speak.</p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~15:04 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 4 (~0.5 min)</span>
             <p>After conducting many interviews with young people, the authors of the book <em>For Parents Only</em> noted this barrier to communication. They say: “The kids’ number one most common complaint about their parents was, ‘They don’t listen.’” That problem is hardly one-sided. Parents frequently make the same complaint about their children.</p>
-
-            <p class="text-indigo font-bold">The point: To keep the lines of communication open, family members must listen—really listen—to one another.</p>
-
+            </div>
+ 
+            <p class="text-indigo font-bold">Here's the point: To keep the lines of communication open, family members must listen—really listen—to one another.</p>
+ 
             <p>Parents, do you really listen to your children? This may be difficult when you are tired or when the conversation seems somewhat trivial. But what appears to be trivial to you may be very important to your child.</p>
-
-            <p>Think about the Bible principle found at Luke 16:10: "The person faithful in what is least is faithful also in much, and the person unrighteous in what is least is unrighteous also in much."</p>
-
-            <p>Those quote-unquote “little things” or trivial matters that your children bring to you now can prove to them that you care for them and love them. If you take an interest in helping them with what seems trivial to you now, then you can be sure when the important issues come, your children are likely to come to you for these heavier matters.</p>
-
+ 
+            <p id="anchor-pc2">Think about the Bible principle found at Luke 16:10: "The person faithful in what is least is faithful also in much, and the person unrighteous in what is least is unrighteous also in much."</p>
+ 
+            <p>Those "little things" your children bring to you now prove that you care. Show interest in the trivial stuff, and when the big issues come, they'll come to you.</p>
+ 
             <p>That’s what it means to be approachable!</p>
-
+ 
             <p>As parents, we need to remember that our children do not have the same experience in life as we do. Everything is fresh to them, you have a unique opportunity and responsibility to help them to grow and learn. You only have one opportunity to do this. (pause 1 beat) DO NOT throw it away.</p>
-
-            <p>Open your bibles with me to Ephesians 5:15, 16 (this will really drive home the point of our use of time):</p>
-
+ 
+            <p id="anchor-pc3">Open your bibles with me to Ephesians 5:15, 16 (this will really drive home the point of our use of time):</p>
+ 
             <div class="scripture-box">
                 <div class="scripture-title">Ephesians 5:15, 16</div>
                 "So keep strict watch that how you walk is not as unwise but as wise persons, making the best use of your time, because the days are wicked."
             </div>
-
-            <p>Notice the scripture says that we need to keep strict watch, to be wise, because the days are wicked! No better time can we apply this scripture than to right now. The last days of this wicked system of things we need to keep awake! We need to keep on the watch! We need to pray for Wisdom! We need Jehovah's help to do this.</p>
-
+ 
+            <p>Notice the scripture says we need to keep strict watch, to be wise, because the days are wicked. No better time to apply this than right now—we need to stay alert, and we need Jehovah's help to do it.</p>
+ 
             <p>But he gives us the answer right here in the scripture on how to do this: <strong>make the best use of your time.</strong></p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~12:26 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 2 (~0.6 min)</span>
             <p>Imagine you have been given a valuable inheritance. How would you use it? Pay off your mortgage? Buy a new car? Invest it? Save it? How you would use it would say much about what is important to you.</p>
-
-            <p>Parents, Jehovah has given you an inheritance in your children. What are you doing with it? You have a responsibility greater than any other responsibility you can think of.</p>
-
+            </div>
+ 
+            <p>Parents, your children are actually a valuable inheritance from Jehovah. What are you doing with that inheritance? You have a responsibility greater than any other responsibility you can think of.</p>
+ 
             <p>It can appear that giving your children the needed time and attention may be something you can put off till another day. After all, you have seemingly urgent matters to attend to right now! But those urgent matters can choke off your time from actual important things in life. What you use your time for will show you what is most important to you.</p>
-
+ 
             <p>So if you feel guilty of this, some self-evaluation may be warranted.</p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~11:14 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 3 (~0.5 min)</span>
             <p>There is a useful article in the Watchtower August 1st, 2006: “You cannot save it, so use it well”. It highlights two key points for time management: Avoid procrastination and cut down on clutter.</p>
-
-            <p>Do you find yourself constantly juggling your time to accommodate all the things that you feel you must do—whether they are connected with your job, home, car, hobbies, trips, exercise routine, social events, or a host of other interests? If so, perhaps it is time to consider how you can reduce the clutter, spiritually speaking.</p>
-
-            <p>The days we are living are wicked and we need to keep on the watch and make the best use of our time! Make time for your children.</p>
-
-            <p>Children, all these principles that we have talked about so far can also apply to you. Remember this important point: Your parents love you very much and really want what is best for you. The Bible says at Proverbs 1:5, "a wise person listens and takes in more instruction. A man of understanding acquires skillful direction."</p>
-
-            <p>It is wise for you to be slow about speaking and think about what your parents are trying to say to you. Remember this important point: Your parents have experienced much of what you are going through and they want to protect you from making mistakes, maybe mistakes that they themselves have made and regret. Your parents should be viewed as your allies, not your adversary.</p>
-
+ 
+            <p>Do you find yourself constantly juggling your job, home, hobbies, trips, and a host of other things? If so, perhaps it's time to reduce the clutter, spiritually speaking.</p>
+            </div>
+ 
+            <p>These are urgent times. Make the best use of your time—make time for your children.</p>
+ 
+            <p id="anchor-pc4">Children, all these principles that we have talked about so far can also apply to you. Remember this important point: Your parents love you very much and really want what is best for you. The Bible says at Proverbs 1:5, "a wise person listens and takes in more instruction. A man of understanding acquires skillful direction."</p>
+ 
+            <div class="time-marker">10:00 LEFT</div>
+ 
+            <p>Be slow to speak, and think about what your parents are trying to say. They've experienced much of what you're going through, and want to protect you from mistakes—maybe ones they made themselves. View your parents as allies, not adversaries.</p>
+ 
             <p>Honor your father and your mother was a command that Jehovah gave to the Israelites and something that was passed to the Christians too. This is the first command Jehovah gave that had a promise connected to it. The promise is that things will go well with you and you will live a long time! The hope is that you will be able to live forever! Of course, it is wise to obey your parents as long as what they say doesn’t go against Jehovah.</p>
-
+ 
             <p>But sometimes you may feel like you are not being heard. Keep trying, be willing to share your thoughts and your feelings with your parents. Remember that they have a lot going on in their lives and are imperfect.</p>
-
+ 
             <p>When you were young, your parents had many rules. One of them may have been “don’t play in the street.” You may have questioned their thinking ability then, because you may have thought “there are no cars in the road!” “They just don’t want me to have fun!”</p>
-
+ 
             <p>Even at a young age, you could be reasoned with and could see the principle behind such a rule and you would obey because you knew your parents loved you. By taking the time and paying attention to what your parents said, you are alive today and have benefited from their rules.</p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~7:55 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 6 (~1.1 min)</span>
             <p>When you grow older there are different kinds of dangers. But, like before, your parents' experience and wisdom can help you to avoid many pitfalls and disasters. Likely, you have more freedom now, however, obey the rules your parents still have for you.</p>
-
+ 
             <p>Just like before, allow your parents to reason with you. This will take some time, you may not understand fully why they tell you what they tell you, but pay attention to what they say, this will preserve your life! Remember, your parents love you and want what is best for you.</p>
-
-            <p style="color:#64748b; font-weight:bold; margin: 3rem 0 1rem 0;">(If time permits - compress section if needed)</p>
-
-            <p>Communication is like a two-way street and sometimes there are road blocks. There may be times when you want talk with your parents, but, they have other stresses or concerns on their minds. Other times your parents want to talk with you, but, you have stresses or other things on your mind.</p>
-
-            <p>How can this roadblock be overcome? A Bible principle can help us. Philippians 2:3, 4:</p>
-
+            </div>
+ 
+            <p id="anchor-pc5" style="color:#64748b; font-weight:bold; margin: 3rem 0 1rem 0;">(If time permits - compress section if needed)</p>
+ 
+            <p>Communication really goes both ways—and both parents and children need a healthy dose of humility to make it work. Philippians 2:3, 4 puts it well:</p>
+ 
             <div class="scripture-box">
                 <div class="scripture-title">Philippians 2:3, 4</div>
                 "Do nothing out of contentiousness or out of egotism, but with humility consider others superior to you, as you look out not only for your own interests, but also for the interests of others."
             </div>
-
-            <p>So what is contentiousness? Someone who is contentious is always looking to start an argument, and egotism is thinking more of yourself than is necessary. What is the antidote for these qualities? Humility—a healthy view of considering others superior to you in some way.</p>
-
-            <p>For example, sometimes we might catch ourselves starting to say something that is really upsetting to whomever we are talking to. If we follow this scripture, we can use humility to cut down our ego. We can stop mid-sentence and simply say, <span class="text-indigo font-bold">"Oof... that didn't come out right. Can I start over?"</span> Then, we can reexamine how we could say it better.</p>
-
+ 
+            <p>OK, so we always hear this—don't be contentious, be humble. But here's the real question: next time you catch yourself becoming that way, how do you actually apply this scripture in the moment?</p>
+ 
+            <p>For example, sometimes we might catch ourselves starting to say something that is really upsetting to whomever we are talking to. Right then, we can stop mid-sentence and simply say, <span class="text-indigo font-bold">"Oof... that didn't come out right. Can I start over?"</span> Then, we can reexamine how we could say it better.</p>
+ 
             <p>Of course, it would be better not to say something hurtful in the first place, but we are not perfect. Who can completely control his tongue? Are any of us perfect? What scripture supports that? James 3:2 reminds us: "For we all stumble many times. If anyone does not stumble in word, he is a perfect man." Since none of us are perfect, humility allows us to hit the reset button.</p>
-
+ 
+            <div class="decision-marker">⏱ Should have ~5:32 LEFT here — keep if on pace, cut if behind</div>
+            <div class="cut-candidate">
+            <span class="cut-label">Optional Cut — Layer 7 (~0.2 min)</span>
             <p>Many times, in driving you need to yield. Yielding to other drivers can sometimes take humility. But, if you don’t yield, eventually, you will crash.</p>
-
-            <p>Both parents and young ones need to learn to be humble. Both need to yield and listen to each other. If you work together, you will get much accomplished and you will be happy.</p>
-
-            <p>Your parents love you and so when they are teaching you to do chores around the house, remember that it is an extension of love that they are doing this for you. They want you to be successful in life, and learning to be diligent and to do hard work, especially when you don’t want to do it, will make you successful. Also, by helping around the house, happily and not begrudgingly, you will make your parents happy and will contribute to keeping the lines of communication open inside the household.</p>
-
+            </div>
+ 
+            <p>Both parents and young ones need to learn to be humble. Both need to give way to each other and truly listen. If you work together, you will get much accomplished and you will be happy.</p>
+ 
+            <p>When your parents have you do chores, remember—that's an extension of their love. They want you to succeed, and learning to work hard, even when you don't want to, will help you get there. Do it happily, not begrudgingly, and you'll keep those lines of communication open.</p>
+ 
             <p>When they organize time to worship Jehovah together as a family, take the time and pay attention to what is being taught, and participate to the best of your ability, this will help you see the love that your parents have for you and will build a relationship that will last forever between you, your parents, and Jehovah!</p>
-
-
+ 
+ 
             <div class="time-marker">05:00 LEFT</div>
             <div class="section-header">WORSHIPPING JEHOVAH & CONCLUSION (5 min)</div>
-
-            <p>Communication within the family leads to happiness now and to God’s approval. Jehovah, our father, wants us to be happy, he loves us very much. He wants us to be close to him.</p>
-
+ 
+            <p id="anchor-c1">Communication within the family leads to happiness now and to God's approval. Jehovah, our Father, loves us deeply and wants us happy and close to him.</p>
+ 
             <div class="scripture-box">
                 <div class="scripture-title">James 4:8</div>
                 "Draw close to God, and he will draw close to you."
             </div>
-
+ 
             <p>As we strengthen our relationship with Jehovah, we will see our relationships with others naturally improve. Even if not all family members worship Jehovah, family communication will benefit from the efforts of those who apply Bible principles.</p>
-
+ 
             <p>Of course, if we worship Jehovah together as a family it will strengthen the bond even more. This bond that we have with Jehovah will give us a magnetic personality. A magnet with iron is strong, but a magnet with another magnet is even stronger!</p>
-
-            <p>What can you do right now to improve your families' communication with each other? If you are a family head you should be taking the lead in doing this. If you are part of a family, you should be cooperating with this arrangement.</p>
-
+ 
+            <p>What can you do right now? If you're a family head, take the lead. If you're a family member, cooperate fully.</p>
+ 
             <p class="text-indigo font-bold text-center" style="font-size: 1.5rem; margin: 2rem 0;">Remember this: Families that do not spend time together, do not communicate well. Families that do not communicate well, have problems.</p>
-
+ 
             <p>This isn't just an opinion; it is a Scriptural reality based on the verses we've discussed today. As we saw in <strong>Proverbs 15:22</strong>, without consultation, plans fail. But to have that consultation, you must apply <strong>Ephesians 5:15, 16</strong> and "make the best use of your time." Good communication doesn't happen by accident; it requires an intentional investment of your time.</p>
-
-            <p>So, here are five practical things to work on:</p>
+ 
+            <p id="anchor-c2">So, here are five practical things to work on:</p>
             
             <ol style="font-size: 1.5rem; line-height: 1.6; margin-bottom: 3rem; color: var(--text-color); font-weight: bold; padding-left: 2rem;">
                 <li style="margin-bottom: 1rem;"><span class="text-indigo">Eat a meal together</span> at least once a day as a habit. Like the early Christians at <strong>Acts 2:46</strong>, take your meals together with "great rejoicing."</li>
@@ -608,82 +770,245 @@
                 <li style="margin-bottom: 1rem;"><span class="text-indigo">Play together.</span> <strong>Ecclesiastes 3:4</strong> reminds us there is a "time to laugh" and a "time to skip about." Families that play together, stay together!</li>
                 <li style="margin-bottom: 1rem;"><span class="text-indigo">Study the Bible together</span> at least once a week. Follow <strong>Deuteronomy 6:6, 7</strong> to speak of God's words when you "sit in your house." Dig deep and encourage one another.</li>
             </ol>
-
-            <p>Earlier, we talked about how people will immediately put a protective case on a new smartphone to protect their investment. (pause 1 beat) These five steps are the protective case for your family.</p>
-
+ 
+            <p id="anchor-c3">Earlier, we talked about how people will immediately put a protective case on a new smartphone to protect their investment. (pause 1 beat) These five steps are the protective case for your family.</p>
+ 
             <p>If you put these into practice, you won't have to worry about missing opportunities to tell your family how much you love them. Applying Bible principles in our lives, especially what it says about families, will improve our communication right now.</p>
-
+ 
             <p>Jehovah, the one that all families owe their name to, has given us direction:</p>
-
+ 
             <p>For husbands and wives, he requires the husband to be understanding and reasonable and to show his wife honor. And the wife to be wise, respectful, and kind.</p>
-
-            <p>For children and parents, he requires the parents to keep the lines of communication open and to be quick to listen and slow to speak. And he requires the children to obedient to their parents and to be quick to listen and slow to speak.</p>
-
-            <p>In the introduction, we talked about those frustrating movies where a simple conversation could have fixed everything. Usually, at the very end of the movie, the protagonist finally realizes what needs to be done, a change happens, and there is a happy resolution.</p>
-
+ 
+            <p>For children and parents, he requires the parents to keep the lines of communication open and to be quick to listen and slow to speak. And he requires children to be obedient, and likewise quick to listen and slow to speak.</p>
+ 
+            <p>In the introduction, we talked about those frustrating movies where a simple conversation could have fixed everything. Usually, right at the end, the protagonist finally realizes what needs to be done—and there's a happy resolution.</p>
+ 
             <p>It would be nice if life was exactly like that—where one big realization fixes everything forever. But in reality, every day we need to be looking for ways to improve ourselves, and communication within the family is no different.</p>
-
+ 
             <p>When we worship Jehovah together as a family, and try our very best to do his will and apply his principles to our lives daily, communication will become much easier. It will become as easy as breathing. And you will live a life without regrets.</p>
-
+ 
         </div>
-
+ 
         <!-- OUTLINE TAB -->
         <div id="tab-outline" class="tab-content">
-            
-            <div class="outline-block">
-                <h2 class="outline-title">I. INTRODUCTION (5 MIN)</h2>
-                <ul class="outline-list">
-                    <li><span style="color:white; font-weight:900;">Hook:</span> Phone anecdote ("How did that make you feel?"). The Connectivity Paradox.</li>
-                    <li><span style="color:white; text-decoration:underline;">Scripture:</span> Prov 15:22 (Cause & effect: failure vs. accomplishment).</li>
-                    <li><span style="color:white; font-weight:900;">Visual:</span> Family not communicating well (Tragic comedy analogy).</li>
-                    <li>Three key points: Husbands/Wives, Parents/Children, Worshipping Jehovah.</li>
-                </ul>
+ 
+            <p class="mindmap-hint">Tap a bubble to see the details. <strong>Press and hold a bubble for a second</strong> to jump straight to that point in the script.</p>
+ 
+            <!-- SECTION I: INTRODUCTION -->
+            <div class="mindmap-section">
+                <div class="mindmap-badge-wrap"><span class="mindmap-badge intro">I. Introduction (5 min)</span></div>
+                <div class="bubble-list">
+                    <div class="bubble-item intro" data-anchor="anchor-i1">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Hook: The phone anecdote</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Walk to the podium checking your phone, then look up — the audience feels the disconnect firsthand.</li>
+                                <li>Point: all our tech hasn't solved the real problem — missing Jehovah's wisdom on the family arrangement.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item intro" data-anchor="anchor-i2">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Scripture: Proverbs 15:22</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Cause and effect: no consultation → failure; consultation → accomplishment.</li>
+                                <li>"Consultation" is simply another word for communication.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item intro" data-anchor="anchor-i3">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Visual: Family not communicating well</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Artwork of a troubled dad, a frustrated mom ("Ugh!!"), and disconnected kids.</li>
+                                <li>Tragic-comedy movie analogy — you want to "shake some sense" into the screen.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item intro" data-anchor="anchor-i4">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Roadmap: Three key points</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Husbands and Wives</li>
+                                <li>Parents and Children</li>
+                                <li>Worshipping Jehovah</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="outline-block alt">
-                <h2 class="outline-title">II. HUSBANDS AND WIVES (10 MIN)</h2>
-                <ul class="outline-list">
-                    <li><span style="color:white; text-decoration:underline;">Scripture:</span> Gen 2:18 (Complement, not copy).</li>
-                    <li>Principles vs. Rules (e.g., analytical vs. emotional).</li>
-                    <li>Acknowledge differences in communication.</li>
-                    <li><span style="color:white; text-decoration:underline;">Scripture:</span> 1 Pet 3:7 (Dwell according to knowledge, assign honor).</li>
-                    <li><span style="color:white; font-weight:900;">Illustration:</span> Smartphone capabilities and protective case.</li>
-                    <li><span style="color:white; font-weight:900;">Visual:</span> Husband paying attention to his wife.</li>
-                    <li><span style="color:white; text-decoration:underline;">Scripture:</span> Prov 31:26 (Law of kindness on her tongue).</li>
-                    <li>Example of Isaac and Rebekah (Gen 27). Shift from "you" to "I".</li>
-                    <li><span style="color:white; text-decoration:underline;">Scripture:</span> 1 Pet 3:8 (Humility is essential).</li>
-                </ul>
+ 
+            <!-- SECTION II: HUSBANDS AND WIVES -->
+            <div class="mindmap-section">
+                <div class="mindmap-badge-wrap"><span class="mindmap-badge hw">II. Husbands and Wives (10 min)</span></div>
+                <div class="bubble-list">
+                    <div class="bubble-item hw" data-anchor="anchor-hw1">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Acknowledge the differences</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Gen 2:18 — a wife as a complement, not a copy.</li>
+                                <li>Women often talk through a problem; men tend to think in solutions.</li>
+                                <li>Marriage unites two minds, two tongues — a real challenge.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item hw" data-anchor="anchor-hw2">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Husbands: 1 Peter 3:7</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>"Dwell with her according to knowledge" — really understand her needs.</li>
+                                <li>Ecclesiastes 4:9, 10 — two are better than one.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item hw" data-anchor="anchor-hw3">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Illustration: $1000 phone & protective case</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>People protect a new phone right away, then get complacent over time.</li>
+                                <li>Honoring your wife takes ongoing time and attention, not a one-time effort.</li>
+                                <li>Visual: husband paying close attention to his wife.</li>
+                                <li>Warning: neglecting this can even hinder a husband's prayers.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item hw" data-anchor="anchor-hw4">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Wives: Proverbs 31:26</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>The law of kindness on her tongue — a capable, spiritually grounded wife.</li>
+                                <li>Proverbs 14:1 — the wise woman builds up her house.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item hw" data-anchor="anchor-hw5">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Example: Isaac and Rebekah</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Rebekah expressed her feelings honestly; Isaac responded without harshness.</li>
+                                <li>Practical tip: shift from "you" to "I" language to defuse disagreements.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item hw" data-anchor="anchor-hw6">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Working together: 1 Peter 3:8</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Self-check: do we set aside time to talk and pray together, before problems arise?</li>
+                                <li>Humility is the core trait — everything else revolves around it.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="outline-block">
-                <h2 class="outline-title">III. PARENTS AND CHILDREN (10 MIN)</h2>
-                <ol class="outline-list" style="list-style-type: decimal;">
-                    <li><span style="color:white; font-weight:900;">Parents:</span> Be approachable. <span style="color:white; text-decoration:underline;">Scripture:</span> James 1:19 (Quick to listen).</li>
-                    <li>Listen to trivial things (Luke 16:10).</li>
-                    <li><span style="color:white; font-weight:900;">Illustration:</span> Valuable Inheritance. <span style="color:white; text-decoration:underline;">Scripture:</span> Eph 5:15,16 (Make best use of time).</li>
-                    <li><span style="color:white; font-weight:900;">Children:</span> View parents as allies. Obey rules for protection.</li>
-                    <li><span class="text-indigo font-bold">If time permits:</span> Roadblocks to communication. <span style="color:white; text-decoration:underline;">Scripture:</span> Phil 2:3,4 (Humility to yield).</li>
-                    <li><span style="color:white; font-weight:900;">Humility in action:</span> Catching yourself mid-sentence ("Can I start over?"). James 3:2.</li>
-                </ol>
+ 
+            <!-- SECTION III: PARENTS AND CHILDREN -->
+            <div class="mindmap-section">
+                <div class="mindmap-badge-wrap"><span class="mindmap-badge pc">III. Parents and Children (10 min)</span></div>
+                <div class="bubble-list">
+                    <div class="bubble-item pc" data-anchor="anchor-pc1">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Parents: be approachable</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>James 1:19 — quick to listen, slow to speak, slow to anger.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item pc" data-anchor="anchor-pc2">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Listen to the "little things"</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Luke 16:10 — faithful in what is least, faithful also in much.</li>
+                                <li>Kids who feel heard on small stuff will come to you for the big stuff later.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item pc" data-anchor="anchor-pc3">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Make the best use of your time</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Ephesians 5:15, 16 — keep strict watch, the days are wicked.</li>
+                                <li>Your children are a valuable inheritance — don't let "urgent" things crowd them out.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item pc" data-anchor="anchor-pc4">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Children: parents are allies</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Proverbs 1:5 — a wise person listens and takes in more instruction.</li>
+                                <li>The "don't play in the street" illustration — rules exist for protection.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item pc" data-anchor="anchor-pc5">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>If time permits: humility & yielding</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Philippians 2:3, 4 — humility, considering others' interests too.</li>
+                                <li>The "Oof, that didn't come out right — can I start over?" reset moment (James 3:2).</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="outline-block alt">
-                <h2 class="outline-title">IV. WORSHIPPING JEHOVAH & CONCLUSION (5 MIN)</h2>
-                <ul class="outline-list">
-                    <li><span style="color:white; text-decoration:underline;">Scripture:</span> James 4:8 (Draw close to God).</li>
-                    <li>Magnet analogy (worshipping together strengthens the bond).</li>
-                    <li><span style="color:white; font-weight:900;">Summary Bridge:</span> Time = Communication = Success (Prov 15:22 & Eph 5:15).</li>
-                    <li><span style="color:white; font-weight:900;">Five Practical Steps:</span> Eat (Acts 2:46), Pray (1 Thess 5:17), Meetings (Heb 10:24,25), Play (Eccl 3:4), Study (Deut 6:6,7).</li>
-                    <li><span style="color:white; font-weight:900;">Smartphone Callback:</span> The 5 steps are your family's protective case.</li>
-                    <li><span style="color:white; font-weight:900;">Summary:</span> Review roles (Husbands, Wives, Parents, Children).</li>
-                    <li><span style="color:white; font-weight:900;">Movie Callback:</span> Real life requires daily improvement, not a one-time resolution.</li>
-                    <li>Apply principles for a life without regrets.</li>
-                </ul>
+ 
+            <!-- SECTION IV: WORSHIPPING JEHOVAH & CONCLUSION -->
+            <div class="mindmap-section">
+                <div class="mindmap-badge-wrap"><span class="mindmap-badge concl">IV. Worshipping Jehovah & Conclusion (5 min)</span></div>
+                <div class="bubble-list">
+                    <div class="bubble-item concl" data-anchor="anchor-c1">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Worship strengthens the bond</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>James 4:8 — draw close to God, and he will draw close to you.</li>
+                                <li>Magnet analogy: a magnet with another magnet is even stronger.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item concl" data-anchor="anchor-c2">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Five practical steps</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Eat, Pray, Meetings, Play, Study — together, each backed by a scripture.</li>
+                                <li>Callback: these five steps are your family's "protective case."</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                    <div class="bubble-item concl" data-anchor="anchor-c3">
+                        <div class="bubble-header" onclick="toggleBubble(this)"><span class="bubble-dot"></span>Wrap-up & callback</div>
+                        <div class="bubble-details">
+                            <ul>
+                                <li>Review: husbands honor, wives respectful, parents listen, children obedient.</li>
+                                <li>Movie callback: real life takes daily effort, not one big realization.</li>
+                                <li>Close: a life without regrets.</li>
+                            </ul>
+                            <div class="bubble-hint">Hold this bubble to jump here in the script</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+ 
         </div>
     </main>
-
+ 
     <script>
         // --- CONFIGURATION ---
         // Change this to the total duration of your talk in seconds
@@ -692,11 +1017,11 @@
         
         // When the timer should turn red and pulse (e.g., 5 minutes left)
         const RED_ALERT_SECONDS = 5 * 60; 
-
+ 
         // Specific time markers (in seconds) where the screen will quickly flash white
         // Default sets flashes at 26m, 20m, 8m, 4m, and 2m remaining.
         const FLASH_MARKERS = [26*60, 20*60, 8*60, 4*60, 2*60];
-
+ 
         // --- STATE ---
         let timeLeft = TOTAL_SECONDS;
         let timerInterval = null;
@@ -706,7 +1031,7 @@
         let scrollSpeed = 1.0; // Starting speed (pixels per frame)
         let scrollAnimationFrame = null;
         let showHudTimeout = null;
-
+ 
         // --- DOM ELEMENTS ---
         const display = document.getElementById('timerDisplay');
         const playBtn = document.getElementById('playBtn');
@@ -716,30 +1041,30 @@
         const flashOverlay = document.getElementById('flash-overlay');
         const scrollBtn = document.getElementById('scrollBtn');
         const scrollHud = document.getElementById('scroll-hud');
-
+ 
         // --- GESTURE RECOGNITION LOGIC ---
         let touchStartX = 0;
         let touchStartY = 0;
         let lastTapTime = 0;
-
+ 
         document.addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
         }, {passive: true});
-
+ 
         document.addEventListener('touchend', function(e) {
             // Ignore if clicking buttons or tabs
             if (e.target.closest('button') || e.target.closest('.tab-switcher')) return;
             
             // Only apply on script tab
             if (!document.getElementById('tab-script').classList.contains('active')) return;
-
+ 
             let touchEndX = e.changedTouches[0].screenX;
             let touchEndY = e.changedTouches[0].screenY;
             
             let deltaX = touchEndX - touchStartX;
             let deltaY = touchEndY - touchStartY;
-
+ 
             // Swipe logic (Left/Right to adjust speed)
             if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 60) {
                 if (deltaX > 0) {
@@ -753,7 +1078,7 @@
                 }
                 return; // Prevent double tap logic if swiping
             }
-
+ 
             // Double Tap Logic (Toggle play/pause scrolling)
             if (Math.abs(deltaX) < 10 && Math.abs(deltaY) < 10) {
                 let currentTime = new Date().getTime();
@@ -765,7 +1090,7 @@
                 lastTapTime = currentTime;
             }
         });
-
+ 
         // --- AUTO SCROLL LOGIC ---
         function autoScrollLoop() {
             if (isAutoScrolling) {
@@ -773,7 +1098,7 @@
                 scrollAnimationFrame = requestAnimationFrame(autoScrollLoop);
             }
         }
-
+ 
         function toggleAutoScroll() {
             isAutoScrolling = !isAutoScrolling;
             if (isAutoScrolling) {
@@ -786,7 +1111,7 @@
                 showScrollHud("Auto-Scroll: OFF");
             }
         }
-
+ 
         function showScrollHud(text) {
             scrollHud.textContent = text;
             scrollHud.style.opacity = '1';
@@ -795,13 +1120,13 @@
                 scrollHud.style.opacity = '0';
             }, 1500);
         }
-
+ 
         // --- INITIALIZATION ---
         // Auto-convert "(pause X beats)" into red dots on page load
         window.onload = function() {
             // Set initial timer text based on configuration
             display.textContent = formatTime(TOTAL_SECONDS);
-
+ 
             const scriptTab = document.getElementById('tab-script');
             // We use an HTML parser approach to avoid destroying event listeners, 
             // but since it's static text, innerHTML replacement is safe and fast here.
@@ -830,7 +1155,7 @@
                         dotHtml += '</span>';
                         return dotHtml;
                     });
-
+ 
                     // Replace literal ● if typed manually
                     html = html.replace(/●+/g, function(match) {
                         let count = match.length;
@@ -841,19 +1166,19 @@
                         dotHtml += '</span>';
                         return dotHtml;
                     });
-
+ 
                     p.innerHTML = html;
                 }
             });
         };
-
+ 
         // --- TIMER LOGIC ---
         function formatTime(seconds) {
             const m = Math.floor(seconds / 60);
             const s = seconds % 60;
             return m + ':' + (s < 10 ? '0' : '') + s;
         }
-
+ 
         function updateTimerUI() {
             display.textContent = formatTime(timeLeft);
             if (timeLeft <= RED_ALERT_SECONDS && timeLeft > 0) {
@@ -862,14 +1187,14 @@
                 display.classList.remove('timer-red');
             }
         }
-
+ 
         function triggerFlash() {
             flashOverlay.classList.add('is-flashing');
             setTimeout(() => {
                 flashOverlay.classList.remove('is-flashing');
             }, 150); // 150ms flash
         }
-
+ 
         function toggleTimer() {
             if (isActive) {
                 // Pause it
@@ -888,7 +1213,7 @@
                 playText.textContent = "PAUSE";
                 playIcon.style.display = "none";
                 pauseIcon.style.display = "block";
-
+ 
                 timerInterval = setInterval(() => {
                     timeLeft--;
                     updateTimerUI();
@@ -896,7 +1221,7 @@
                     if (FLASH_MARKERS.includes(timeLeft)) {
                         triggerFlash();
                     }
-
+ 
                     if (timeLeft <= 0) {
                         clearInterval(timerInterval);
                         isActive = false;
@@ -909,7 +1234,7 @@
                 }, 1000);
             }
         }
-
+ 
         function resetTimer() {
             clearInterval(timerInterval);
             isActive = false;
@@ -922,7 +1247,7 @@
             playIcon.style.display = "block";
             pauseIcon.style.display = "none";
         }
-
+ 
         // --- TAB LOGIC ---
         function switchTab(tabId) {
             // Update buttons
@@ -947,6 +1272,52 @@
                 toggleAutoScroll();
             }
         }
+        function toggleBubble(headerEl) {
+            headerEl.parentElement.classList.toggle('expanded');
+        }
+ 
+        function jumpToScriptAnchor(anchorId) {
+            switchTab('script');
+            setTimeout(function() {
+                const el = document.getElementById(anchorId);
+                if (el) {
+                    const y = el.getBoundingClientRect().top + window.scrollY - 190;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    el.classList.add('anchor-flash');
+                    setTimeout(function() { el.classList.remove('anchor-flash'); }, 1500);
+                }
+            }, 50);
+        }
+ 
+        // Wire up press-and-hold (0.6s) on each bubble header to jump to the script.
+        // A quick tap/click still falls through to toggleBubble() via the existing onclick.
+        (function setupBubblePressAndHold() {
+            const HOLD_MS = 600;
+            document.querySelectorAll('.bubble-header').forEach(function(header) {
+                let pressTimer = null;
+                const bubbleItem = header.parentElement;
+                const anchorId = bubbleItem.getAttribute('data-anchor');
+ 
+                const start = function() {
+                    header.classList.add('pressing');
+                    pressTimer = setTimeout(function() {
+                        header.classList.remove('pressing');
+                        if (navigator.vibrate) navigator.vibrate(50);
+                        jumpToScriptAnchor(anchorId);
+                    }, HOLD_MS);
+                };
+                const cancel = function() {
+                    header.classList.remove('pressing');
+                    clearTimeout(pressTimer);
+                };
+ 
+                header.addEventListener('pointerdown', start);
+                header.addEventListener('pointerup', cancel);
+                header.addEventListener('pointerleave', cancel);
+                header.addEventListener('pointercancel', cancel);
+                header.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+            });
+        })();
     </script>
 </body>
 </html>
